@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="watchlist.html" target="_blank">Watchlist</a></li>
+                <li><a id="signup" href="signup.html" >Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="signup-main">
+        <h3>Sign Up</h3>
+        <form class="signup-form" action="#" method="post">
+            <input id="name" type="text" placeholder="Name*" required>
+            <input type="email" id="email" name="email" placeholder="Email*" required>
+            <div class="eye">
+                <p id="error-message"></p>
+                <input id="password" type="password" placeholder="Password*" required>
+                <i id="toogle-password"></i>
+            </div>
+            <div class="eye">
+                <input id="confirm-password" type="password" placeholder="Confirm Password*" required>
+                <i id="toogle-confirm-password"></i>
+            </div>
+            <div class="signup-button">
+                <button id="submit" type="submit" onclick="window.location.href='index.html'">Submit</button>
+                <button id="cancel" type="button" onclick="goBack()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>
+
+        function goBack() {
+            window.history.back();
+        }
+        const eyeIcon1 = document.querySelector('#toogle-password');
+        const password = document.querySelector('#password');
+        eyeIcon1.addEventListener('click', function(){
+            const type = password.getAttribute('type');
+            type === 'password' ? password.setAttribute('type', 'text'): password.setAttribute('type', 'password');
+        });
+
+        const eyeIcon2 = document.querySelector('#toogle-confirm-password');
+        const confirmPassword = document.querySelector('#confirm-password');
+        eyeIcon2.addEventListener('click', function(){
+            const type = confirmPassword.getAttribute('type');
+            type === 'password' ? confirmPassword.setAttribute('type', 'text') : confirmPassword.setAttribute('type','password');
+        });
+
+        const submit = document.querySelector('#submit');
+        submit.addEventListener('click', function(event){
+            if(password.value != confirmPassword.value){
+                event.preventDefault();
+                document.getElementById('error-message').textContent = "Passwords do not match";
+                document.getElementById('error-message').style.color = 'red';
+                password.value= "";
+                confirmPassword.value = '';
+                setTimeout(()=>{
+                    document.getElementById('error-message').textContent = "";
+                }, 2000)
+            }
+        });
+    </script>
+</body>
+
+</html>

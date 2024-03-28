@@ -1,0 +1,7 @@
+
+
+6. Add a search bar in home as well as in Watchlist page
+7. Check if drowdown menu works in Watchlist page
+9. Watchlist : Duplicates
+10. Replace codes with crypto Names
+11. Add some more cryptos in the list

@@ -1,0 +1,201 @@
+#watchlist{
+    color: rgb(13, 218, 207);
+}
+
+.watchlist-main-box{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 40vw;
+    max-width: 80vw;
+    min-height: 70vh;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#your-watchlist{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+}
+#your-watchlist h3{
+    position: relative;
+    color: white;
+    margin: 10px 30px 10px 30px;
+    font-size: 1.5rem;
+}
+#addToWatchlist-Subdiv{
+    display: flex;
+    background: whitesmoke;
+    border-radius: 50px;
+    margin: 0 5px 7px 2px;
+    height: 40px;
+    background: black;
+    border: solid 1px skyblue;
+}
+#addToWatchlist-Subdiv input{
+    background: transparent;
+    color: white;
+    flex: 1;
+    margin: 10px 25px 10px 30px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+#addToWatchlist-Subdiv button {
+    position: relative;
+    padding: 5px 10px 5px 10px;
+    width: 120px;
+    font-size: 1rem;
+    border-radius: 50px;
+    outline: none;
+    border: solid 1px skyblue;
+    background-color: rgba(0, 128, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#addToWatchlist-Subdiv button:hover{
+    background-color: skyblue;
+}
+
+.watchlist-crypto-box{
+    position: relative;
+    min-width: 40%;
+    max-width: 700px;
+    width: 100%;
+    height: 50px;
+    margin: 6px 0px;
+    padding: 0px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px rgb(18, 250, 231);
+    background-color: rgba(18, 250, 231, 0.1);
+}
+.watchlist-crypto-box:hover{
+    animation: borderRotation 1s linear infinite;
+}
+.watchlist-name-img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.watchlist-crypto-img{
+    position: relative;
+    width: 40px;
+}
+.watchlist-crypto-name{
+    font-size: 1em;
+}
+.watchlist-crypto-price{
+    font-size: 1.1em;
+    margin-top: 0px;
+}
+.watchlist-crypto-box i{
+    height: 28px;
+    aspect-ratio: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+.watchlist-crypto-box i::before{
+    content: '';
+    display: inline-block;
+    position: relative;
+    border-left: solid 4px white;
+    height: 20px;
+    width: 2px;
+    top: 3px;
+    left: 12px;
+    transform: rotate(-45deg);
+}
+.watchlist-crypto-box i::after{
+    content: '';
+    display: inline-block;
+    position: relative;
+    border-left: solid 4px white;
+    height: 20px;
+    width: 0px;
+    top: 4px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 600px){
+    .watchlist-main-box {
+        min-width: 90%;
+        margin-top: 25px;
+    }
+    #your-watchlist h3 {
+        margin: 7px 30px 7px 26px;
+        font-size: 1rem;
+    }
+    
+    #addToWatchlist-Subdiv {
+        margin: 0px 5px 7px 2px;
+        height: 30px;
+       }
+    
+    #addToWatchlist-Subdiv input {
+        margin: 5px 10px 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    #addToWatchlist-Subdiv button {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+    .watchlist-crypto-box {
+        height: 30px;
+        margin: 3px 0px;
+    }
+    
+    .watchlist-crypto-img {
+        width: 25px;
+        margin-right: 5px;
+    }
+    
+    .watchlist-crypto-name {
+        font-size: 0.8em;
+        margin-right: 5px;
+    }
+    
+    .watchlist-crypto-price {
+        font-size: 0.8em;
+    }
+    
+    .crypto-price {
+        padding: 2px 5px;
+    }
+    .watchlist-crypto-box i {
+        margin-left: 5px;
+        margin-right: 5px;
+        height: 19px;
+    }
+    
+    .watchlist-crypto-box i::before {
+        height: 13px;
+        width: 0px;
+        top: 2px;
+        left: 8px;
+    }
+    
+    .watchlist-crypto-box i::after {
+        height: 13px;
+        width: 0px;
+        top: 2px;
+        left: 4px;
+     }
+}
+
+@media screen and (max-width: 310px){
+    .watchlist-main-box {
+        min-width: 97%;
+        margin-top: 25px;
+    }
+}
