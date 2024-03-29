@@ -21,7 +21,7 @@
     </header>
     <div class="signup-main">
         <h3>Sign Up</h3>
-        <form class="signup-form" action="#" method="post">
+        <form class="signup-form" action="index.html" method="post">
             <input id="name" type="text" placeholder="Name*" required>
             <input type="email" id="email" name="email" placeholder="Email*" required>
             <div class="eye">
@@ -34,45 +34,56 @@
                 <i id="toogle-confirm-password"></i>
             </div>
             <div class="signup-button">
-                <button id="submit" type="submit" onclick="window.location.href='index.html'">Submit</button>
+                <button id="submit" type="submit" >Submit</button>
                 <button id="cancel" type="button" onclick="goBack()">Cancel</button>
             </div>
         </form>
     </div>
 
     <!-- JavaScript -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
         <script>
 
         function goBack() {
             window.history.back();
         }
+        function hideAndShowPassword(ElementId){
+            const element = document.querySelector('#' + ElementId);
+            const type = element.getAttribute('type');
+            type === 'password' ? element.setAttribute('type', 'text') : element.setAttribute('type', 'password');
+        }
+        function passwordValidity(event, password1, password2){
+            const pass1 = document.querySelector('#' + password1);
+            const pass2 = document.querySelector('#' + password2);
+            if(pass1.value != pass2.value){
+                event.preventDefault();
+                document.getElementById('error-message').textContent = "Passwords do not match";
+                document.getElementById('error-message').style.color = 'red';
+                pass1.value= "";
+                pass2.value = "";
+                setTimeout(()=>{
+                    document.getElementById('error-message').textContent = "";
+                }, 2000);
+            }
+            else{
+                window.location.href="index.html";
+            }
+        }
         const eyeIcon1 = document.querySelector('#toogle-password');
-        const password = document.querySelector('#password');
         eyeIcon1.addEventListener('click', function(){
-            const type = password.getAttribute('type');
-            type === 'password' ? password.setAttribute('type', 'text'): password.setAttribute('type', 'password');
+            hideAndShowPassword('password');
+            this.style.borderColor = this.style.borderColor !== 'transparent' ? 'transparent' : 'white';
         });
 
         const eyeIcon2 = document.querySelector('#toogle-confirm-password');
-        const confirmPassword = document.querySelector('#confirm-password');
         eyeIcon2.addEventListener('click', function(){
-            const type = confirmPassword.getAttribute('type');
-            type === 'password' ? confirmPassword.setAttribute('type', 'text') : confirmPassword.setAttribute('type','password');
+            hideAndShowPassword('confirm-password');
+            this.style.borderColor = this.style.borderColor !== 'transparent' ? 'transparent' : 'white';
         });
 
         const submit = document.querySelector('#submit');
         submit.addEventListener('click', function(event){
-            if(password.value != confirmPassword.value){
-                event.preventDefault();
-                document.getElementById('error-message').textContent = "Passwords do not match";
-                document.getElementById('error-message').style.color = 'red';
-                password.value= "";
-                confirmPassword.value = '';
-                setTimeout(()=>{
-                    document.getElementById('error-message').textContent = "";
-                }, 2000)
-            }
+            passwordValidity(event, 'password', 'confirm-password');
         });
     </script>
 </body>
