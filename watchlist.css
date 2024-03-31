@@ -20,11 +20,34 @@
     max-width: 700px;
     width: 100%;
 }
+.watchlist-name-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 #your-watchlist h3{
+    display: inline;
+    width: 180px;
     position: relative;
     color: white;
-    margin: 10px 30px 10px 30px;
+    margin: 5px 5px 5px 10px;
     font-size: 1.5rem;
+}
+#watchlist-delete{
+    display: inline;
+    width: 180px;  
+    height: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: solid 1px red;
+    color: white;
+    border-radius: 7px;
+    padding: 2px;
+    margin: 5px;
+}
+#watchlist-delete:hover{
+    background-color: rgb(255, 0, 0);
 }
 #addToWatchlist-Subdiv{
     display: flex;
@@ -132,10 +155,15 @@
         margin-top: 25px;
     }
     #your-watchlist h3 {
-        margin: 7px 30px 7px 26px;
+        margin: 7px 10px 7px 26px;
         font-size: 1rem;
     }
-    
+    #watchlist-delete{
+        margin-right: 2px;
+        width: 150px;  
+        height: 35px;
+        font-size: 0.7rem;
+    }
     #addToWatchlist-Subdiv {
         margin: 0px 5px 7px 2px;
         height: 30px;
