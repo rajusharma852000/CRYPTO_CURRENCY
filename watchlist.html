@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="watchlist.css">
 
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,9 +24,12 @@
     <main>
         <div class="watchlist-main-box">
             <div id="your-watchlist">
-                <h3>Your Watchlist</h3>
+                <div class="watchlist-name-button">
+                    <h3>Your Watchlist</h3>
+                    <button id="watchlist-delete">Delete Watchlist</button>
+                </div>
                 <div id="addToWatchlist-Subdiv">
-                    <input type="text" placeholder="Enter the currency code...">
+                    <input type="text" placeholder="Enter the currency name...">
                     <button type="button">Add</button>
                 </div>
             </div>
@@ -32,4 +37,5 @@
     </main>
     <script src="watchlist.js"></script>
 </body>
+
 </html>
